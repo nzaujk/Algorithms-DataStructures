@@ -3,9 +3,9 @@ const quickSort = () => {
 };
 
 const quick = (array, left, right) => {
-    let index; //{1}
-    if (array.length > 1) { //{2}
-        index = partition(array, left, right); //{3}
+    let index;
+    if (array.length > 1) {
+        index = partition(array, left, right);
         if (left < index - 1) {
             quick(array, left, index - 1);
         }
@@ -15,20 +15,20 @@ const quick = (array, left, right) => {
 };
 
 const partition = (array, left, right) => {
-    let pivot = array[Math.floor((right + left) / 2)], //{8}
+    let pivot = array[Math.floor((right + left) / 2)],
         i = left,
         j = right;
     while (i <= j) {
-        while (array[i] < pivot) {  //{12}
+        while (array[i] < pivot) {
             i++; }
-        while (array[j] > pivot) {  //{13}
+        while (array[j] > pivot) {
             j--;
         }
-        if (i <= j) { //{14}
-            swap(array, i, j); //{15}
+        if (i <= j) {
+            swap(array, i, j);
             i++;
             j--;
         } }
-    return i; //{16}
+    return i;
 };
-//{9} //{10}
+
